@@ -15,9 +15,16 @@ class CreateProductTable extends Migration
     {
         Schema::create('product', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('product_brand_id');
+            $table->string('name');
+            $table->double('price');
+            $table->string('img');
+            $table->string('pin');
+            $table->string('os');
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
@@ -29,3 +36,6 @@ class CreateProductTable extends Migration
         Schema::dropIfExists('product');
     }
 }
+
+
+

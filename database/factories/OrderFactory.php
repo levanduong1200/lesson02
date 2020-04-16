@@ -2,7 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Models\Order;
+use App\Models\Orders;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
@@ -17,10 +17,14 @@ use Illuminate\Support\Str;
 |
 */
 
-$factory->define(Order::class, function (Faker $faker) {
+$factory->define(Orders::class, function (Faker $faker) {
     return [
         'users_id' => 1,
         'date_order' => $faker->dateTime,
         'total' => $faker->randomDigit
     ];
 });
+
+
+
+

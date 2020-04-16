@@ -15,6 +15,7 @@ class CreateProductBrandTable extends Migration
     {
         Schema::create('product_brand', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -29,3 +30,5 @@ class CreateProductBrandTable extends Migration
         Schema::dropIfExists('product_brand');
     }
 }
+
+

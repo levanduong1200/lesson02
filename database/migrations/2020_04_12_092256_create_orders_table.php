@@ -15,9 +15,13 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('users_id');
+            $table->timestamp('date_order');
+            $table->integer('total');
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
@@ -29,3 +33,4 @@ class CreateOrdersTable extends Migration
         Schema::dropIfExists('orders');
     }
 }
+
