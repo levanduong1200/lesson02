@@ -24,8 +24,10 @@ $factory->define(Product::class, function (Faker $faker) {
         'product_brand_id' => $faker->randomFloat,
         'price' => $faker->randomFloat,
         'img' => $faker->url,
-        'screen' => $faker->word,
         'pin' => $faker->word,
         'os' => $faker->word
     ];
 });
+
+
+

@@ -22,3 +22,4 @@ $factory->define(ProductBrand::class, function (Faker $faker) {
         'name' => $faker->name,
     ];
 });
+

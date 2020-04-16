@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,3 +16,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('products', 'ProductController');
+Route::resource('productbrand', 'ProductBrandController');
+Route::resource('orders', 'ordersController');
+Route::resource('orderdetail', 'orderdetailController');
+
+
+

@@ -9,3 +9,8 @@ class ProductBrand extends Model
     //
     protected $table = 'product_brand';
 }
+
+
+
+
+

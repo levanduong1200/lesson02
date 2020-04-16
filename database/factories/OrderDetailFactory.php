@@ -27,3 +27,5 @@ $factory->define(OrderDetail::class, function (Faker $faker) {
         'total' => $faker->randomDigit
     ];
 });
+
+
