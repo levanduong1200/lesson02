@@ -14,7 +14,8 @@ class ProductBrandController extends Controller
      */
     public function index(Request $request)
     {
-        return ProductBrand::all();
+        $productBrands = ProductBrand::all();
+        return view('product_brands/index', array('productBrands' => $productBrands));
     }
 
     /**
@@ -24,7 +25,7 @@ class ProductBrandController extends Controller
      */
     public function create()
     {
-        //
+        return view('product_brands/create');
     }
 
     /**
@@ -35,7 +36,11 @@ class ProductBrandController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if(ProductBrand::create($request->all())){
+            return redirect()->route('product_brands.index');
+        }else{
+            return back();
+        }
 
     }
 
@@ -47,7 +52,6 @@ class ProductBrandController extends Controller
      */
     public function show($id)
     {
-        return ProductBrand::find($id);
     }
 
     /**
@@ -58,7 +62,8 @@ class ProductBrandController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pb = ProductBrand::find($id);
+        return view('product_brands/edit', array('pb' => $pb));
     }
 
     /**
@@ -70,7 +75,9 @@ class ProductBrandController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pb = ProductBrand::find($id);
+        $pb->update($request->all());
+        return redirect()->route('product_brands.index');
     }
 
     /**
@@ -81,6 +88,7 @@ class ProductBrandController extends Controller
      */
     public function destroy($id)
     {
-        //
+        ProductBrand::destroy($id);
+        return redirect()->back();
     }
 }
